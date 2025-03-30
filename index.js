@@ -32,7 +32,8 @@ app.post('/chunk', (req, res) => {
     const generator = new NoiseChunkGenerator(null, settings)
     
     const chunk = new Chunk(-64, 256, ChunkPos.create(Math.ceil(xOffset/16)+1, Math.ceil(zOffset/16)+1));
-
+    console.log(chunk.sectionsCount)
+    
     generator.fill(randomState, chunk,false);
     generator.buildSurface(randomState, chunk);
 
